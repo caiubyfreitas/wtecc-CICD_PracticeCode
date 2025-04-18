@@ -13,7 +13,7 @@ COUNTER = {}
 ############################################################
 @app.route("/health")
 def health():
-    """Health Status"""
+    """Health Status my ass"""
     return jsonify(dict(status="OK")), status.HTTP_200_OK
 
 
@@ -23,7 +23,7 @@ def health():
 @app.route("/")
 def index():
     """Returns information abut the service"""
-    app.logger.info("Request for Base URL")
+    app.logger.info("Request for Base URL to your mother")
     return jsonify(
         status=status.HTTP_200_OK,
         message="Hit Counter Service",
@@ -104,7 +104,7 @@ def update_counters(name):
 @app.route("/counters/<name>", methods=["DELETE"])
 def delete_counters(name):
     """Deletes a counter"""
-    app.logger.info("Request to Delete counter: %s...", name)
+    app.logger.info("Request to Delete counter: %s%s...", name, name)
 
     if name in COUNTER:
         COUNTER.pop(name)
